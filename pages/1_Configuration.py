@@ -24,7 +24,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     config.llm_provider = st.selectbox(
-        "LLM Provider",
+        label="LLM Provider",
         options=["openai", "huggingface"],
         index=["openai", "huggingface"].index(config.llm_provider)
         if config.llm_provider in ["openai", "huggingface"]
@@ -37,7 +37,7 @@ with col1:
 
 with col2:
     config.llm_model_name = st.text_input(
-        "LLM Model Name or Path",
+        label="LLM Model Name or Path",
         value=config.llm_model_name,
         help=(
             "For OpenAI: e.g. `gpt-4o-mini`.\n"
@@ -53,7 +53,7 @@ col3, col4 = st.columns(2)
 
 with col3:
     config.embedding_provider = st.selectbox(
-        "Embedding Provider",
+        label="Embedding Provider",
         options=["huggingface", "openai"],
         index=["huggingface", "openai"].index(config.embedding_provider)
         if config.embedding_provider in ["huggingface", "openai"]
@@ -66,7 +66,7 @@ with col3:
 
 with col4:
     config.embedding_model_name = st.text_input(
-        "Embedding Model Name or Path",
+        label="Embedding Model Name or Path",
         value=config.embedding_model_name,
         help=(
             "For Hugging Face: e.g. `all-MiniLM-L6-v2`, `sentence-transformers/all-mpnet-base-v2`, "
